@@ -31,7 +31,7 @@ def main():
                 for item in ordenado[:quantidade]:
                     print(f"{item['nome']} - Estoque: {item['estoque']} - R${item['preco']}")
             except ValueError:
-                print("❌ Quantidade inválida. Digite um número inteiro.")
+                print("❌ Quantidade inválida. Tente novamente.")
 
 
         elif op == "2":

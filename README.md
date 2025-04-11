@@ -26,7 +26,7 @@ O aplicativo é executado via terminal e oferece as seguintes funcionalidades:
 ## 📁 Estrutura de Arquivos
 
 ```
-app_mecanico/
+app/
 │
 ├── main.py                     # Arquivo principal para rodar o app
 ├── ordenacao.py                # Contém o algoritmo Merge Sort
