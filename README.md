@@ -1,7 +1,7 @@
 
 # CHALLENGE FIAP - SPRINT 3: APP MECÂNICO
 
-    Sistema em Python desenvolvido para mecânicos consultarem peças automotivas utilizando diferentes algoritmos de busca e ordenação, com base em uma API simulada da Rede Âncora.
+Sistema em Python desenvolvido para mecânicos consultarem peças automotivas utilizando diferentes algoritmos de busca e ordenação, com base em uma API simulada da Rede Âncora.
 
 ---
 
