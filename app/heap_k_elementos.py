@@ -1,7 +1,7 @@
 import heapq
 
-def get_k_maiores(data, key, k):
-    return heapq.nlargest(k, data, key=lambda x: x[key])
+def obter_k_maiores(dados, chave, k):
+    return heapq.nlargest(k, dados, key=lambda x: x[chave])
 
-def get_k_menores(data, key, k):
-    return heapq.nsmallest(k, data, key=lambda x: x[key])
+def obter_k_menores(dados, chave, k):
+    return heapq.nsmallest(k, dados, key=lambda x: x[chave])

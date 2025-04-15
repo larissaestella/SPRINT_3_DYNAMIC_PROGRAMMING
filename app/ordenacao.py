@@ -1,23 +1,29 @@
-def merge_sort(data, key, reverse=False):
-    if len(data) <= 1:
-        return data
-    mid = len(data) // 2
-    left = merge_sort(data[:mid], key, reverse)
-    right = merge_sort(data[mid:], key, reverse)
-    return merge(left, right, key, reverse)
+def merge_sort(lista, key, reverse=False):
+    if len(lista) <= 1:
+        return lista
 
-def merge(left, right, key, reverse):
-    result = []
+    meio = len(lista) // 2
+    esquerda = merge_sort(lista[:meio], key, reverse)
+    direita = merge_sort(lista[meio:], key, reverse)
+
+    return mesclar(esquerda, direita, key, reverse)
+
+def mesclar(esquerda, direita, key, reverse):
+    resultado = []
     i = j = 0
-    while i < len(left) and j < len(right):
-        condition = left[i][key] < right[j][key]
-        if reverse: condition = not condition
-        if condition:
-            result.append(left[i])
+
+    while i < len(esquerda) and j < len(direita):
+        condicao = esquerda[i][key] < direita[j][key]
+        if reverse:
+            condicao = not condicao
+
+        if condicao:
+            resultado.append(esquerda[i])
             i += 1
         else:
-            result.append(right[j])
+            resultado.append(direita[j])
             j += 1
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
+
+    resultado.extend(esquerda[i:])
+    resultado.extend(direita[j:])
+    return resultado

@@ -1,31 +1,33 @@
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
 
-class BST:
+class ArvoreBST:
     def __init__(self):
-        self.root = None
+        self.raiz = None
 
-    def insert(self, value):
-        def _insert(node, value):
-            if not node:
-                return Node(value)
-            if value < node.value:
-                node.left = _insert(node.left, value)
+    def inserir(self, valor):
+        def _inserir(no, valor):
+            if not no:
+                return No(valor)
+            if valor < no.valor:
+                no.esquerda = _inserir(no.esquerda, valor)
             else:
-                node.right = _insert(node.right, value)
-            return node
-        self.root = _insert(self.root, value)
+                no.direita = _inserir(no.direita, valor)
+            return no
+        self.raiz = _inserir(self.raiz, valor)
 
-    def search_prefix(self, prefix):
-        results = []
-        def _inorder(node):
-            if node:
-                _inorder(node.left)
-                if node.value.lower().startswith(prefix.lower()):
-                    results.append(node.value)
-                _inorder(node.right)
-        _inorder(self.root)
-        return results[:5]  # Limita a 5 sugestões
+    def buscar_por_prefixo(self, prefixo):
+        resultados = []
+
+        def _em_ordem(no):
+            if no:
+                _em_ordem(no.esquerda)
+                if no.valor.lower().startswith(prefixo.lower()):
+                    resultados.append(no.valor)
+                _em_ordem(no.direita)
+
+        _em_ordem(self.raiz)
+        return resultados[:5]  # Limita a 5 sugestões
